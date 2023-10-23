@@ -1,0 +1,304 @@
+.task {
+	@apply relative w-full rounded-lg border border-white-default/20;
+
+	background: linear-gradient(
+			148deg,
+			rgba(255, 255, 255, 0) -12.8%,
+			rgba(255, 255, 255, 0.1) 48.1%,
+			rgba(255, 255, 255, 0) 105.3%
+		),
+		#1d1d1d;
+
+	&:nth-child(odd) {
+		padding: 45px 80px 45px 0;
+
+		.preview {
+			right: 90px;
+		}
+
+		.info {
+			padding: 60px 0 0 40px;
+		}
+		.rectangle {
+			@apply top-0 left-0;
+		}
+		.name {
+			padding: 14px 100px 16px 40px;
+			min-width: 375px;
+
+			> img {
+				@apply rounded-ss-lg;
+			}
+		}
+	}
+
+	&:nth-child(even) {
+		padding: 45px 40px 45px 80px;
+
+		.preview {
+			margin-top: 40px;
+			left: 90px;
+		}
+		.rectangle {
+			@apply top-0;
+		}
+
+		.name {
+			@apply text-center;
+			right: 50px;
+			padding: 14px 100px 18px;
+			min-width: 510px;
+		}
+
+		.info {
+			margin-left: auto;
+			padding-top: 60px;
+		}
+	}
+}
+.preview {
+	max-width: 480px;
+	min-width: 360px;
+	@apply absolute top-0 bottom-0 h-full flex justify-end items-center;
+
+	> img {
+		margin: auto 0;
+		max-height: 350px;
+	}
+}
+
+.rectangle {
+	@apply z-1 absolute;
+}
+.name {
+	@apply inline-block text-white-default font-Raleway font-semibold bg-no-repeat bg-contain bg-center;
+	font-size: 32px;
+
+	> img {
+		@apply absolute;
+		z-index: -1;
+	}
+}
+.info {
+	max-width: 470px;
+	@apply w-full;
+}
+.cons,
+.pros {
+	@apply flex items-start text-white-default;
+	gap: 15px;
+	font-size: 20px;
+}
+
+.cons {
+	@apply font-Raleway font-normal;
+}
+
+.pros {
+	@apply font-Raleway font-bold mt-5;
+}
+
+.btn {
+	@apply mt-10 primary-btn;
+	padding: 20px 75px;
+}
+
+/* Media */
+@media (max-width: 1700px) {
+	.preview {
+		> img {
+			max-height: 300px;
+		}
+	}
+	.name {
+		font-size: 27px;
+	}
+	.cons,
+	.pros {
+		font-size: 18px;
+	}
+}
+@media (max-width: 1500px) {
+	.task {
+		&:nth-child(odd) {
+			.preview {
+				right: 60px;
+			}
+		}
+
+		&:nth-child(even) {
+			.preview {
+				left: 60px;
+			}
+		}
+	}
+}
+@media (max-width: 1250px) {
+	.task {
+		&:nth-child(odd) {
+			padding: 45px 30px 45px 0;
+			.preview {
+				right: 30px;
+			}
+		}
+
+		&:nth-child(even) {
+			padding: 45px 40px 45px 30px;
+			.preview {
+				left: 30px;
+			}
+		}
+	}
+	.name {
+		font-size: 22px;
+	}
+	.preview {
+		min-width: 40%;
+		max-width: 40%;
+
+		> img {
+			max-height: 250px;
+		}
+	}
+}
+@media (max-width: 1100px) {
+	.task {
+		&:nth-child(odd) {
+			.name {
+				min-width: 250px;
+			}
+		}
+
+		&:nth-child(even) {
+			.name {
+				min-width: 300px;
+			}
+		}
+	}
+	.info {
+		max-width: 420px;
+	}
+	.name {
+		font-size: 20px;
+	}
+}
+@media (max-width: 950px) {
+	.task {
+		&:nth-child(odd) {
+			padding: 300px 30px 45px 0;
+
+			.preview {
+				right: auto;
+				left: 0;
+			}
+			.name {
+				min-width: unset;
+				padding: 0;
+			}
+			.info {
+				padding: 40px 0 0 20px;
+			}
+		}
+
+		&:nth-child(even) {
+			padding: 300px 40px 45px 30px;
+
+			.preview {
+				left: auto;
+				right: 0;
+			}
+			.name {
+				min-width: unset;
+				padding: 0;
+			}
+			.info {
+				padding: 40px 0 0 0px;
+			}
+		}
+	}
+	.preview {
+		min-width: 100%;
+		max-width: 100%;
+		top: 80px;
+		min-height: 300px;
+		bottom: auto;
+		height: auto;
+
+		> img {
+			margin: 0 auto;
+		}
+	}
+	.rectangle {
+		margin: 0 auto;
+		left: 0;
+		right: 0;
+		width: fit-content;
+		padding: 18px 70px;
+		border-radius: 10px;
+		@apply bg-orange-300 text-center;
+		transform: translateY(-50%);
+	}
+	.name {
+		font-size: 20px;
+
+		> img {
+			display: none;
+		}
+	}
+	.info {
+		max-width: 100%;
+	}
+	.btn {
+		@apply block w-fit;
+		margin: 40px auto 0;
+	}
+}
+
+@media (max-width: 750px) {
+	.name {
+		font-size: 16px;
+	}
+	.task {
+		&:nth-child(odd) {
+			padding: 270px 20px 40px 20px;
+			.info {
+				padding: 0px 0 0 0px;
+			}
+		}
+
+		&:nth-child(even) {
+			padding: 270px 20px 40px 20px;
+
+			.info {
+				padding: 0px 0 0 0px;
+			}
+		}
+	}
+
+	.preview {
+		top: 40px;
+		min-height: 220px;
+		> img {
+			max-width: 220px;
+			min-width: 220px;
+		}
+	}
+}
+
+@media (max-width: 600px) {
+	.rectangle {
+		min-width: 230px;
+		padding: 12px 20px;
+	}
+	.name {
+		font-size: 16px;
+	}
+	.preview {
+		top: 40px;
+		min-height: 200px;
+		> img {
+			max-width: 200px;
+			min-width: 200px;
+		}
+	}
+}

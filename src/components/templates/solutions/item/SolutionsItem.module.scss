@@ -1,0 +1,40 @@
+.solution {
+	@apply w-full flex flex-col;
+	max-width: 150px;
+	gap: 25px;
+}
+.thumbnail {
+	@apply relative w-full;
+	height: 150px;
+}
+
+.background {
+	@apply absolute top-0 bottom-0 w-full h-full;
+
+	> img {
+		@apply w-full h-full absolute z-0;
+	}
+}
+
+.preview {
+	@apply absolute z-1 w-full h-full flex items-center justify-center;
+}
+
+.name {
+	@apply text-black-default font-semibold;
+	font-size: 20px;
+}
+
+/* Media */
+@media (max-width: 600px) {
+	.solution {
+		max-width: 120px;
+		gap: 15px;
+	}
+	.thumbnail {
+		height: 120px;
+	}
+	.name {
+		font-size: 18px;
+	}
+}

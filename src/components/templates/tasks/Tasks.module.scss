@@ -1,0 +1,26 @@
+.tasks {
+	max-width: 1120px;
+	@apply w-full flex flex-col white-line;
+	gap: 60px;
+	padding: 50px 0 100px;
+
+	&::before {
+		content: '';
+	}
+}
+
+@media (max-width: 950px) {
+	.tasks {
+		gap: 75px;
+		padding: 0px 0 80px;
+
+		&::before {
+			content: none;
+		}
+	}
+}
+@media (max-width: 600px) {
+	.tasks {
+		padding: 0px 0 60px;
+	}
+}

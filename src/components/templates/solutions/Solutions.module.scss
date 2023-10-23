@@ -1,0 +1,23 @@
+.solutions {
+	max-width: 970px;
+	@apply w-full flex justify-between flex-wrap black-line;
+	padding: 40px 0 135px;
+	gap: 80px 60px;
+	&::before {
+		content: '';
+	}
+}
+
+/* Media */
+@media (max-width: 1250px) {
+	.solutions {
+		justify-content: space-between;
+		max-width: none;
+	}
+}
+
+@media (max-width: 500px) {
+	.solutions {
+		padding: 60px 0 135px;
+	}
+}

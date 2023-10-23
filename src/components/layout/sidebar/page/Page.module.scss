@@ -1,0 +1,51 @@
+.page {
+	@apply relative;
+
+	.list {
+		@apply flex flex-col;
+		gap: 25px;
+
+		.item {
+			.link {
+				@apply flex w-2.5 h-2.5 mx-auto;
+
+				span {
+					@apply inline-block w-full h-full rounded-full;
+				}
+			}
+
+			&.white {
+				span {
+					@apply bg-white-default;
+				}
+			}
+
+			&.gray {
+				span {
+					@apply bg-gray-300;
+				}
+			}
+		}
+
+		.current {
+			@apply relative text-lg text-orange-500 font-Furore;
+			line-height: 1;
+
+			> span {
+				@apply absolute font-medium font-Raleway;
+				bottom: 3px;
+				right: -15px;
+				transform: translateX(100%);
+				font-size: 16px;
+
+				&.white {
+					@apply text-white-default;
+				}
+
+				&.gray {
+					@apply text-gray-300;
+				}
+			}
+		}
+	}
+}

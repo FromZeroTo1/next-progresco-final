@@ -1,0 +1,17 @@
+.sidebar {
+	max-width: 225px;
+	@apply w-full absolute flex flex-col items-start justify-between;
+	bottom: 0;
+	right: -245px;
+
+	.wrapper {
+		@apply flex flex-col items-center justify-between h-full;
+	}
+}
+
+/* Media */
+@media (max-width: 1250px) {
+	.sidebar {
+		@apply hidden;
+	}
+}

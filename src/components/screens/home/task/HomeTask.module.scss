@@ -1,0 +1,27 @@
+.heading {
+	max-width: 710px;
+	@apply w-full pb-5;
+}
+.fill {
+	@apply relative;
+
+	.sidebar {
+		@apply pt-5 h-full;
+	}
+}
+
+@media (max-width: 1200px) {
+	.heading {
+		max-width: 650px;
+	}
+}
+@media (max-width: 950px) {
+	.heading {
+		padding-bottom: 75px;
+	}
+}
+@media (max-width: 600px) {
+	.section {
+		padding-top: 60px;
+	}
+}

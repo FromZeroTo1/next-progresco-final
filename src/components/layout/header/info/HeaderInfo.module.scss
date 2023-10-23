@@ -1,0 +1,27 @@
+.info {
+	@apply font-Furore font-medium;
+	font-size: 35px;
+
+	.orange {
+		@apply text-orange-500;
+	}
+}
+
+/* Media */
+@media (max-width: 1700px) {
+	.info {
+		font-size: 33px;
+	}
+}
+
+@media (max-width: 1600px) {
+	.info {
+		font-size: 30px;
+	}
+}
+
+@media (max-width: 1200px) {
+	.info {
+		font-size: 26px;
+	}
+}

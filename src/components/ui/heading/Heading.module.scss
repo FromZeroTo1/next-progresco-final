@@ -1,0 +1,48 @@
+.heading {
+	@apply pb-5 tracking-base text-heading font-Furore;
+	letter-spacing: 2.4px;
+
+	&.gray {
+		@apply text-gray-300;
+	}
+
+	&.white {
+		@apply text-white-default;
+	}
+}
+
+@media (max-width: 1700px) {
+	.heading {
+		font-size: 45px;
+	}
+}
+@media (max-width: 1500px) {
+	.heading {
+		font-size: 42px;
+	}
+}
+@media (max-width: 1200px) {
+	.heading {
+		font-size: 40px;
+	}
+}
+@media (max-width: 1000px) {
+	.heading {
+		font-size: 38px;
+	}
+}
+@media (max-width: 800px) {
+	.heading {
+		font-size: 36px;
+	}
+}
+@media (max-width: 600px) {
+	.heading {
+		font-size: 34px;
+	}
+}
+@media (max-width: 500px) {
+	.heading {
+		font-size: 32px;
+	}
+}

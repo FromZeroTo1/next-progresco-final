@@ -1,0 +1,30 @@
+.container {
+	max-width: 1230px;
+	padding: 0 15px;
+	@apply w-full mx-auto;
+}
+
+/* Media */
+@media (max-width: 1700px) {
+	.container {
+		max-width: 1130px;
+	}
+}
+@media (max-width: 1500px) {
+	.container {
+		max-width: 1030px;
+		margin-right: 245px;
+	}
+}
+@media (max-width: 1250px) {
+	.container {
+		max-width: 1030px;
+		margin: 0 80px;
+	}
+}
+@media (max-width: 500px) {
+	.container {
+		max-width: 350px;
+		@apply mx-auto;
+	}
+}

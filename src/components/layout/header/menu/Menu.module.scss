@@ -1,0 +1,14 @@
+@media(max-width: 1000px){
+	.button{
+		> img{
+			width: 35px;
+		}
+	}
+}
+@media(max-width: 600px){
+	.button{
+		> img{
+			width: 30px;
+		}
+	}
+}
