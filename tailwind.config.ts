@@ -102,74 +102,82 @@ const config: Config = {
 		},
 	},
 	plugins: [
-		plugin(({ addUtilities, addComponents }) => {
-			addComponents({
-				'.btn': {
-					backgroundColor: '#EE562F',
-					color: '#ffffff',
-				},
-
-				'.primary-btn': {
-					fontSize: '14px',
-					backgroundColor: '#EE562F',
-					color: '#ffffff',
-					letterSpacing: '1.4px',
-					textTransform: 'uppercase',
-					fontFamily: 'var(--font-furore)',
-				},
-
-				'.white-line': {
-					position: 'relative',
-					'&::before': {
-						position: 'absolute',
-						top: '0',
-						left: '0',
-						right: '0',
-						background: '#ffffff',
-						width: '100%',
-						height: '1px',
-						opacity: '0.4',
+		plugin(
+			({
+				addUtilities,
+				addComponents,
+			}: {
+				addUtilities: Function
+				addComponents: Function
+			}) => {
+				addComponents({
+					'.btn': {
+						backgroundColor: '#EE562F',
+						color: '#ffffff',
 					},
-				},
 
-				'.black-line': {
-					position: 'relative',
-					'&::before': {
-						position: 'absolute',
-						top: '0',
-						left: '0',
-						right: '0',
-						background: '#000000',
-						width: '100%',
-						height: '1px',
-						opacity: '0.4',
+					'.primary-btn': {
+						fontSize: '14px',
+						backgroundColor: '#EE562F',
+						color: '#ffffff',
+						letterSpacing: '1.4px',
+						textTransform: 'uppercase',
+						fontFamily: 'var(--font-furore)',
 					},
-				},
-			})
 
-			addUtilities({
-				'.outline-border-none': {
-					outline: 'none',
-					border: 'none',
-				},
+					'.white-line': {
+						position: 'relative',
+						'&::before': {
+							position: 'absolute',
+							top: '0',
+							left: '0',
+							right: '0',
+							background: '#ffffff',
+							width: '100%',
+							height: '1px',
+							opacity: '0.4',
+						},
+					},
 
-				'.flex-center-between': {
-					display: 'flex',
-					alignItems: 'center',
-					justifyContent: 'space-between',
-				},
+					'.black-line': {
+						position: 'relative',
+						'&::before': {
+							position: 'absolute',
+							top: '0',
+							left: '0',
+							right: '0',
+							background: '#000000',
+							width: '100%',
+							height: '1px',
+							opacity: '0.4',
+						},
+					},
+				})
 
-				'.image-like-bg': {
-					position: 'absolute',
-					zIndex: '-1',
-					objectPosition: 'center',
-					objectFit: 'cover',
-					pointerEvents: 'none',
-					width: '100%',
-					height: '100%',
-				},
-			})
-		}),
+				addUtilities({
+					'.outline-border-none': {
+						outline: 'none',
+						border: 'none',
+					},
+
+					'.flex-center-between': {
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'space-between',
+					},
+
+					'.image-like-bg': {
+						position: 'absolute',
+						zIndex: '-1',
+						objectPosition: 'center',
+						objectFit: 'cover',
+						pointerEvents: 'none',
+						width: '100%',
+						height: '100%',
+					},
+				})
+			}
+		),
 	],
 }
 export default config
