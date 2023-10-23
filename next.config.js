@@ -12,11 +12,13 @@ const nextConfig = {
 		return [
 			{
 				source: '/api/:path*',
-				destination: 'https://nestjs-app-deploy-production-0c94.up.railway.app/api/:path*',
+				destination:
+					'https://nestjs-app-deploy-production-0c94.up.railway.app/api/:path*',
 			},
 			{
 				source: '/uploads/:path*',
-				destination: 'https://nestjs-app-deploy-production-0c94.up.railway.app/uploads/:path*',
+				destination:
+					'https://nestjs-app-deploy-production-0c94.up.railway.app/uploads/:path*',
 			},
 		]
 	},
