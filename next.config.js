@@ -12,11 +12,11 @@ const nextConfig = {
 		return [
 			{
 				source: '/api/:path*',
-				destination: 'https://ill-rose-monkey-veil.cyclic.app/api/:path*',
+				destination: 'https://nice-gold-scarab-slip.cyclic.app/api/:path*',
 			},
 			{
 				source: '/uploads/:path*',
-				destination: 'https://ill-rose-monkey-veil.cyclic.app/uploads/:path*',
+				destination: 'https://nice-gold-scarab-slip.cyclic.app/uploads/:path*',
 			},
 		]
 	},
