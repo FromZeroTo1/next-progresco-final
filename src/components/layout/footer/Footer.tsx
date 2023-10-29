@@ -1,8 +1,7 @@
-import ContactForm from '@/components/ui/contact-form/ContactForm'
 import { FC } from 'react'
 
 const Footer: FC = () => {
-	return <ContactForm />
+	return ''
 }
 
 export default Footer
