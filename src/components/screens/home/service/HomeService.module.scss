@@ -1,0 +1,32 @@
+.wrapper{
+	@apply flex flex-col;
+}
+.fill {
+	@apply relative;
+
+	.sidebar {
+		@apply h-full;
+		padding-top: 40px;
+	}
+}
+
+/* Media */
+@media (max-width: 1300px) {
+	.heading {
+		@apply w-full;
+		max-width: 800px;
+	}
+	.wrapper{
+		@apply items-center;
+	}
+}
+@media (max-width: 900px) {
+	.heading {
+		max-width: 360px;
+	}
+}
+@media (max-width: 400px) {
+	.heading {
+		padding-left: 20px;
+	}
+}

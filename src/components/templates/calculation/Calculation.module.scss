@@ -1,0 +1,170 @@
+.wrapper {
+	max-width: 1130px;
+	@apply w-full flex justify-between items-center;
+}
+.left {
+	max-width: 455px;
+	@apply w-full black-line;
+	padding-top: 30px;
+	&::before {
+		content: '';
+	}
+}
+.right {
+	max-width: 235px;
+	@apply w-full flex flex-col items-center;
+}
+.heading {
+	@apply font-bold;
+}
+.btn {
+	padding: 19px 38px;
+	@apply primary-btn;
+	margin-top: 85px;
+}
+.description {
+	@apply font-bold text-gray-300;
+}
+.call {
+	max-width: 212px;
+	@apply w-full text-center font-bold text-gradient;
+	margin-bottom: 8px;
+}
+.callMobile {
+	@apply hidden;
+}
+.info {
+	@apply w-full rounded-base text-center;
+	background: linear-gradient(
+			226deg,
+			rgba(255, 255, 255, 0.15) 0%,
+			rgba(255, 255, 255, 0) 100%
+		),
+		#333;
+	padding: 18px 14px 30px 20px;
+	margin-bottom: 28px;
+
+	> img {
+		@apply mx-auto;
+	}
+}
+.name {
+	@apply w-full font-bold text-white-default rounded-small mb-4;
+	background: linear-gradient(
+			226deg,
+			rgba(255, 255, 255, 0.2) 0%,
+			rgba(255, 255, 255, 0) 100%
+		),
+		#ee562f;
+	padding: 10px 5px;
+
+	> span {
+		@apply hidden;
+	}
+}
+.rank {
+	@apply text-white-default/50;
+	font-size: 16px;
+}
+.question {
+	@apply w-full border-2 border-gray-300 border-solid text-gray-300 font-Furore uppercase;
+	font-size: 14px;
+	letter-spacing: 1.4px;
+	padding: 19px;
+}
+.questionMobile {
+	@apply hidden;
+}
+
+/* Media */
+@media (max-width: 1500px) {
+	.name {
+		font-size: 18px;
+	}
+	.rank {
+		font-size: 15px;
+	}
+}
+@media (max-width: 1300px) {
+	.wrapper {
+		@apply flex-col items-center;
+		gap: 25px;
+	}
+	.left {
+		max-width: 800px;
+	}
+	.btn {
+		margin-top: 45px;
+	}
+	.info {
+		padding: 40px 60px;
+		margin: 0;
+		margin-top: 360px;
+	}
+	.right {
+		max-width: 400px;
+	}
+	.call {
+		@apply hidden;
+	}
+	.callMobile {
+		@apply block text-white-default font-medium;
+	}
+	.question {
+		@apply hidden;
+	}
+	.questionMobile {
+		@apply block w-full border border-white-default border-solid text-white-default font-Furore uppercase;
+		font-size: 14px;
+		letter-spacing: 1.4px;
+		padding: 18px 20px;
+		max-width: 240px;
+		margin: 25px auto 0;
+	}
+	.name {
+		margin-bottom: 20px;
+
+		> span {
+			@apply block text-white-default text-opacity-80 font-normal;
+			font-size: 13px;
+		}
+	}
+	.rank {
+		@apply hidden;
+	}
+	.info > img {
+		@apply hidden;
+	}
+	.btn {
+		display: inherit;
+		margin: 45px auto 0;
+	}
+}
+
+@media (max-width: 500px) {
+	.left {
+		padding-top: 20px;
+	}
+	.heading {
+		max-width: 285px;
+		margin: 0 auto;
+	}
+	.description {
+		@apply font-medium;
+	}
+	.btn {
+		margin: 24px auto 0;
+	}
+	.info{
+		@apply relative;
+		min-width: 360px;
+	}
+}
+@media (max-width: 400px) {
+	.info{
+		@apply relative;
+		max-width: 320px;
+		min-width: auto;
+		padding: 40px 40px;
+	}
+}

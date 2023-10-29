@@ -1,0 +1,22 @@
+.services {
+	max-width: 970px;
+	@apply w-full flex flex-wrap white-line;
+	padding-top: 40px;
+	gap: 35px;
+	&::before {
+		content: '';
+	}
+}
+
+/* Media */
+@media (max-width: 1300px) {
+	.services {
+		max-width: 800px;
+	}
+}
+@media (max-width: 900px) {
+	.services {
+		gap: 40px;
+		max-width: 360px;
+	}
+}

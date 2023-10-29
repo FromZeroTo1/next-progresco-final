@@ -152,6 +152,14 @@ const config: Config = {
 							opacity: '0.4',
 						},
 					},
+
+					'.text-gradient': {
+						backgroundColor: '#EE562F',
+						background:
+							'linear-gradient(to top right, #EE562F 0%, rgba(255, 255, 255, .2) 300%)',
+						'-webkitBackgroundClip': 'text',
+						'-webkitTextFillColor': 'transparent',
+					},
 				})
 
 				addUtilities({

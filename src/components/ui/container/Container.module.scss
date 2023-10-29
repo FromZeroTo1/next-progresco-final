@@ -10,7 +10,7 @@
 		max-width: 1130px;
 	}
 }
-@media (max-width: 1500px) {
+@media (max-width: 1600px) {
 	.container {
 		max-width: 1030px;
 		margin-right: 245px;
@@ -18,8 +18,8 @@
 }
 @media (max-width: 1250px) {
 	.container {
-		max-width: 1030px;
-		margin: 0 80px;
+		max-width: calc(100% - 160px);
+		margin: 0 auto;
 	}
 }
 @media (max-width: 500px) {

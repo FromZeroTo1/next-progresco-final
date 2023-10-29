@@ -3,27 +3,39 @@ import evenNameBg from '@/assets/images/tasks/even-title.png'
 import oddNameBg from '@/assets/images/tasks/odd-title.png'
 import prosIcon from '@/assets/images/tasks/pros.svg'
 import { SITE_NAME } from '@/constants/seo.constants'
-import { motion } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
 import Image from 'next/image'
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
 import styles from './TasksItem.module.scss'
 import { ITaskBlockItem } from './interface/task.interface'
 
 const TasksItem: FC<ITaskBlockItem> = ({ task, index }) => {
 	const isEven = index % 2 === 0
 	const nameBg = isEven ? oddNameBg : evenNameBg
-	return (
-		<motion.div
-			className={styles.task}
-			initial={{
-				opacity: 0,
-				transform: 'matrix(0.75, 0, 0, 0.75, 0, 0)',
-			}}
-			whileInView={{
+
+	const { ref, inView } = useInView({
+		threshold: 0.4,
+	})
+	const animation = useAnimation()
+
+	useEffect(() => {
+		if (inView) {
+			animation.start({
 				opacity: 1,
 				transform: 'matrix(1, 0, 0, 1, 0, 0)',
-			}}
-		>
+			})
+		}
+		if (!inView) {
+			animation.start({
+				opacity: 0,
+				transform: 'matrix(0.75, 0, 0, 0.75, 0, 0)',
+			})
+		}
+	}, [inView])
+
+	return (
+		<motion.div ref={ref} className={styles.task} animate={animation}>
 			<div className={styles.preview}>
 				<Image
 					quality={100}

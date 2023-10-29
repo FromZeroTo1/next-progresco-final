@@ -1,0 +1,16 @@
+.item{
+	@apply flex items-center gap-2.5 text-gray-800 font-medium;
+}
+
+
+/* Media */
+@media(max-width: 1600px){
+	.item{
+		font-size: 18px;
+	}
+}
+@media (max-width: 700px) {
+	.item{
+		@apply font-semibold;
+	}
+}

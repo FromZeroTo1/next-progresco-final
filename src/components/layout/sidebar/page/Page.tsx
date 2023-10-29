@@ -1,19 +1,30 @@
-'use client'
-
-import { scrollTo } from '@/hooks/scrollTo'
+import { scrollTo } from '@/utils/scrollTo'
 import cn from 'classnames'
 import { motion } from 'framer-motion'
 import { FC, useMemo } from 'react'
 import styles from './Page.module.scss'
 import { IPage } from './interface/page.interface'
 
+type OpacityValues = {
+	[key: number]: number[]
+}
+
 const maxLinks = 3
 
 const Page: FC<IPage> = ({ pageNumber, pageItems, variant, pageDelay }) => {
-	const pageContent = useMemo(() => {
-		let opacityValues: number[] = []
-		let opacity: number = 0
+	const calculateOpacity = (index: number, endIndex: number): number => {
+		const opacityValues: OpacityValues = {
+			4: [0, 0.8, 0.5, 0.2],
+			5: [0.8, 0, 0.8, 0.5, 0.2],
+			6: [0.5, 0.8, 0, 0.8, 0.5, 0.2],
+			7: [0.2, 0.5, 0.8, 0, 0.8, 0.5, 0.2],
+			8: [0.2, 0.5, 0.8, 0, 0.8, 0.5, 0.2],
+			9: [0.2, 0.5, 0.8, 0, 0.8, 0.5, 0.2],
+		}
+		return opacityValues[endIndex][index]
+	}
 
+	const pageContent = useMemo(() => {
 		if (pageNumber <= 0 || pageNumber > pageItems.length) {
 			return null
 		}
@@ -23,22 +34,13 @@ const Page: FC<IPage> = ({ pageNumber, pageItems, variant, pageDelay }) => {
 
 		return pageItems.slice(startIndex - 1, endIndex).map((page, index) => {
 			const pageIndex = startIndex + index
-			if (endIndex === 4) {
-				opacityValues = [0, 0.8, 0.5, 0.2]
-				opacity = opacityValues[index % 4]
-			} else if (endIndex === 5) {
-				opacityValues = [0.8, 0, 0.8, 0.5, 0.2]
-				opacity = opacityValues[index % 5]
-			} else if (endIndex === 6) {
-				opacityValues = [0.5, 0.8, 0, 0.8, 0.5, 0.2]
-				opacity = opacityValues[index % 6]
-			} else if (endIndex === 7) {
-				opacityValues = [0.2, 0.5, 0.8, 0, 0.8, 0.5, 0.2]
-				opacity = opacityValues[index % 6]
-			}
-			if (pageIndex === pageNumber) {
-				return (
-					<li key={pageIndex} className={styles.current}>
+			const opacity = calculateOpacity(index, endIndex)
+
+			const isCurrentPage = pageIndex === pageNumber
+
+			return isCurrentPage ? (
+				<>
+					<li key={page.pageNumber} className={styles.current}>
 						{page.pageNumber < 10 ? '0' + page.pageNumber : page.pageNumber}{' '}
 						<span
 							className={cn({
@@ -49,24 +51,22 @@ const Page: FC<IPage> = ({ pageNumber, pageItems, variant, pageDelay }) => {
 							{page.name}
 						</span>
 					</li>
-				)
-			} else {
-				return (
-					<li
-						key={pageIndex}
-						className={cn(styles.item, {
-							[styles.gray]: variant === 'gray',
-							[styles.white]: variant === 'white',
-						})}
-					>
-						<button className={styles.link} onClick={() => scrollTo(page.link)}>
-							<span style={{ opacity: opacity }}></span>
-						</button>
-					</li>
-				)
-			}
+				</>
+			) : (
+				<li
+					key={page.pageNumber}
+					className={cn(styles.item, {
+						[styles.gray]: variant === 'gray',
+						[styles.white]: variant === 'white',
+					})}
+				>
+					<button className={styles.link} onClick={() => scrollTo(page.link)}>
+						<span style={{ opacity: opacity }}></span>
+					</button>
+				</li>
+			)
 		})
-	}, [pageNumber, pageItems])
+	}, [pageNumber, pageItems, variant])
 
 	if (!pageContent) {
 		return null

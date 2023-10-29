@@ -1,5 +1,5 @@
 .section {
-	@apply flex min-h-screen;
+	@apply flex min-h-screen overflow-hidden;
 
 	&.gray {
 		@apply bg-gray-800;

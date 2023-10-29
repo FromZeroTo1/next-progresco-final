@@ -1,0 +1,26 @@
+.field {
+	@apply flex flex-col;
+	gap: 5px;
+
+	label{
+		border-radius: 6px;
+		background: #f6f5f7;
+		box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.05) inset;
+		padding: 29px 19px 26px 29px;
+		@apply flex items-center justify-between;
+		gap: 40px;
+	}
+
+	input {
+		@apply w-full h-full outline-border-none bg-transparent;
+		color: #121212;
+		font-size: 18px;
+		line-height: 1.4;
+		letter-spacing: 1.8px;
+		opacity: 0.6;
+	}
+}
+.error{
+	font-size: 13px;
+	@apply text-orange-500;
+}
